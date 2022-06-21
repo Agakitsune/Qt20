@@ -1,0 +1,18 @@
+#pragma once
+
+#include <qt6/QtWidgets/QApplication>
+
+namespace qt20 {
+
+    namespace widgets {
+
+        // For abstraction (Illusion class)
+        class App : public QApplication {
+            public:
+                explicit App(int ac, char **av);
+                ~App() = default;
+        };
+
+    } // namespace widgets
+
+} // namespace qt20

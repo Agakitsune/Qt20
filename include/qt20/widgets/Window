@@ -1,0 +1,19 @@
+#pragma once
+
+#include "Widget"
+
+namespace qt20 {
+    namespace widgets {
+        class Window : public Widget {
+            Window() = default;
+            ~Window() = default;
+
+            Window &show();
+
+            Window &setTitle(const std::string &name);
+            std::string getTitle() const;
+        };
+
+    } // namespace widgets
+
+} // namespace qt20

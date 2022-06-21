@@ -1,0 +1,31 @@
+#pragma once
+
+#include <qt6/QtWidgets/QWidget>
+#include <qt6/QtCore/qnamespace.h>
+
+#include "qt20/GUI/Action"
+
+namespace qt20 {
+    namespace widgets {
+        class Widget : public QWidget {
+            public:
+                explicit Widget(Widget &parent);
+                explicit Widget(Widget &parent, Qt::WindowFlags flags = Qt::Widget);
+                explicit Widget(Qt::WindowFlags flags = Qt::Widget);
+                ~Widget() = default;
+
+                std::string accessibleDescription() const;
+                Widget &setAccessibleDescription(const std::string &description);
+
+                std::string accessibleName() const;
+                Widget &setAccessibleName(const std::string &name);
+
+                Widget &activateWindow();
+
+                Widget &addAction(gui::Action &action);
+
+        };
+
+    } // namespace widgets
+
+} // namespace qt20

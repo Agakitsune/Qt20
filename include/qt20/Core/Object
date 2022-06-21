@@ -1,0 +1,16 @@
+#pragma once
+
+#include <qt6/QtCore/QObject>
+
+namespace qt20 {
+    namespace core {
+        class Object : public QObject {
+            public:
+                Object();
+                explicit Object(Object &parent);
+
+        };
+
+    } // namespace core
+
+} // namespace qt20

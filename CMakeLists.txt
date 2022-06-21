@@ -24,10 +24,10 @@ file(GLOB_RECURSE SRC
 
 add_executable(qt ${SRC})
 
-target_include_directories(Qt20 PUBLIC
+target_include_directories(qt PUBLIC
     "${PROJECT_BINARY_DIR}"
 )
 
-target_link_libraries(Qt20 PRIVATE Qt6::Core)
-target_link_libraries(Qt20 PRIVATE Qt6::Gui)
-target_link_libraries(Qt20 PRIVATE Qt6::Widgets)
+target_link_libraries(qt PRIVATE Qt6::Core)
+target_link_libraries(qt PRIVATE Qt6::Gui)
+target_link_libraries(qt PRIVATE Qt6::Widgets)

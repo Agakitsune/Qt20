@@ -9,6 +9,69 @@ namespace qt20 {
                 Object();
                 explicit Object(Object &parent);
 
+                bool blockSignals(bool block);
+                // const ObjectList &children() const;
+                // MetaObject::Connection connect(Object &sender,
+                //                                const std::string &signal,
+                //                                const std::string &method,
+                //                                Qt::ConnectionType = Qt::AutoConnection) const;
+
+                bool disconnect(const std::string &signal, Object &receiver, const std::string &method) const;
+                bool disconnect(const std::string &signal, Object &receiver) const;
+                bool disconnect(const std::string &signal) const;
+                bool disconnect() const;
+                bool disconnect(Object &receiver, const std::string &method) const;
+                bool disconnect(Object &receiver) const;
+
+                const Object &dumpObjectInfo() const;
+                const Object &dumpObjectTree() const;
+
+                // List<ByteArray> dynamicPropertyNames() const;
+
+                // virtual bool event(Event &event);
+                // virtual bool eventFilter(Object &watched, Event &event);
+
+                template<typename T>
+                T findChild(const std::string &name, Qt::FindChildOptions options = Qt::FindChildrenRecursively) const {
+                    return QObject::findChild<T>(name, options);
+                }
+
+                // template<typename T>
+                // List<T> findChildren(const std::string &name, Qt::FindChildOptions options = Qt::FindChildrenRecursively) const;
+                // template<typename T>
+                // List<T> findChildren(Qt::FindChildOptions options = Qt::FindChildrenRecursively) const;
+                // template<typename T>
+                // List<T> findChildren(const RegularExpression &re, Qt::FindChildOptions options = Qt::FindChildrenRecursively) const;
+
+                bool inherits(const std::string &name) const;
+
+                Object &installEventFilter(Object &filterObj);
+
+                bool isWidgetType() const;
+                bool isWindowType() const;
+
+                Object &killTimer(int id);
+
+                // virtual const MetaObject &metaObject() const;
+
+                // Object &moveToThread(Thread &target);
+
+                std::string objectName() const;
+
+                Object &parent() const;
+
+                // Variant property(const std::string &name) const;
+
+                Object &removeEventFilter(Object &obj);
+                Object &setObjectName(const std::string &name);
+                Object &setParent(Object &parent);
+                // bool setProperty(const std::string &name, const Variant &value)
+                bool signalsBlocked() const;
+                int startTimer(int interval, Qt::TimerType timerType = Qt::CoarseTimer);
+                int startTimer(std::chrono::milliseconds time, Qt::TimerType timerType = Qt::CoarseTimer);
+
+                // Thread &thread() const;
+
         };
 
     } // namespace core

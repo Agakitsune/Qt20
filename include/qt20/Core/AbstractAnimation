@@ -1,0 +1,37 @@
+#pragma once
+
+#include <qt6/QtCore/QAbstractAnimation>
+
+#include "Object"
+
+namespace qt20 {
+    namespace core {
+        class AbstractAnimation : public QAbstractAnimation {
+            public:
+                AbstractAnimation(Object &parent);
+                AbstractAnimation();
+                ~AbstractAnimation() = default;
+
+                int currentLoop() const;
+                int currentLoopTime() const;
+                int currentTime() const;
+
+                Direction direction() const;
+
+                virtual int duration() const = 0;
+
+                // AnimationGroup &group() const;
+
+                int loopCount() const;
+
+                AbstractAnimation &setDirection(Direction direction);
+                AbstractAnimation &setLoopCount(int count);
+
+                State state() const;
+
+                int totalDuration() const;
+        };
+
+    } // namespace core
+
+} // namespace qt20

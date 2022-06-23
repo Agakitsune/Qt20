@@ -3,8 +3,6 @@
 #include <qt6/QtWidgets/QWidget>
 #include <qt6/QtCore/qnamespace.h>
 
-#include "qt20/GUI/Action"
-
 namespace qt20 {
     namespace widgets {
         class Widget : public QWidget {
@@ -22,7 +20,7 @@ namespace qt20 {
 
                 Widget &activateWindow();
 
-                Widget &addAction(gui::Action &action);
+                // Widget &addAction(gui::Action &action);
 
         };
 

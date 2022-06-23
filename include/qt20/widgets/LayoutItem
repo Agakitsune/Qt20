@@ -1,0 +1,24 @@
+#pragma once
+
+#include <qt6/QtWidgets/QLayoutItem>
+
+#include <qt20/widgets/Widget>
+
+namespace qt20 {
+    namespace widgets {
+        class LayoutItem : public QLayoutItem {
+            public:
+                LayoutItem(Qt::Alignment alignment = Qt::Alignment());
+                virtual ~LayoutItem() = default;
+
+                // virtual Layout &layout();
+
+                virtual LayoutItem &setAlignment(Qt::Alignment alignment);
+
+                // virtual SpacerItem &spacerItem();
+                // virtual Widget &widget() const;
+        };
+
+    } // namespace widgets
+
+} // namespace qt20
